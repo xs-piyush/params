@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-              sh "sed 's/url/url1/' be.yaml"
-              sh "cat be.yaml"
+              sh "sed 's/url/url1/' be.yaml > bf.yaml"
+              sh "cat bf.yaml"
             }
         }
     }
