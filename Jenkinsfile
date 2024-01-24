@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-              sh "sed 's/nginx-deployment/url/' be.yaml"
+              sh "sed 's/url/url1/' be.yaml"
               sh "cat be.yaml"
             }
         }
