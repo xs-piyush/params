@@ -22,12 +22,12 @@ pipeline {
                 }
             }
     
-    stages {
+      stages {
         stage('Choose') {
             steps {
               sh "echo "hello"
-            }
-        }
-    }
-}
+             }
+         }
+     }
+  }
 }
