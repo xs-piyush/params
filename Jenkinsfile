@@ -21,7 +21,7 @@ pipeline {
                     sh "sed 's/utn/${value2}/' bf.yaml > bf.yaml.tmp"
                     sh "sed 's/atn/${value1}/' bf.yaml.tmp > bf.yaml"
                     sh "cat bf.yaml"
-                    sh "rm -f bf.yaml.tmp bf.yaml"
+                    sh "rm -f bf.yaml"
                 }
             }
         }
