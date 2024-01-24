@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: url
+  name: utn
   labels:
     app: web
 spec:
@@ -17,7 +17,7 @@ spec:
         app: web
     spec:
       containers:
-       —name: nginx
-          image: nginx
+       —name: frontend
+          image: atu
           ports:
            —containerPort: 80
