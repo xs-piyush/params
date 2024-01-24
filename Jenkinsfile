@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'pwd'
+                sh 'kubectl config --kubeconfig=/var/lib/jenkins/.kube/config view'
                 sh '/snap/bin/kubectl get po'
             }
         }
