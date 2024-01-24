@@ -9,11 +9,11 @@ pipeline {
                     def value2
  
                     if (params.image == 'Image=nginx:latest, Deployment Name: Nginx-deployment') {
-                        value1 = 'nginx:latest'
-                        value2 = 'Nginx-deployment'
+                        value1 = '$Enter_Name_of_your_Deployment'
+                        value2 = '$Enter_Url_of_you_Image'
                     } else if (params.image == 'Image=httpd, Deployment Name: Apache-deployment') {
-                        value1 = 'httpd:latest'
-                        value2 = 'Apache-deployment'
+                        value1 = '$Enter_Name_of_your_Deployment'
+                        value2 = '$Enter_Url_of_you_Image'
                     }
  
                     echo "Building for distribution: ${params.image}"
