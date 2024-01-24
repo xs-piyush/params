@@ -20,15 +20,15 @@ pipeline {
  
                     sh "sed 's/utn/${value2}/g' be.yaml > bf.yaml"
                     sh "sed 's/atn/${value1}/g' be.yaml > bf.yaml"
-                    sh "cat bf.yaml"
-                    sh "rm -f bf.yaml"
+
                 }
             }
         }
  
         stage('Choose') {
             steps {
-                sh "echo 'hello'"
+                    sh "cat bf.yaml"
+                    sh "rm -f bf.yaml"
             }
         }
     }
