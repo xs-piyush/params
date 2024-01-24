@@ -18,8 +18,8 @@ pipeline {
  
                     echo "Building for distribution: ${params.image}"
  
-                    sh "sed 's/utn/${value2}/' bf.yaml > bf.yaml"
-                    sh "sed 's/atn/${value1}/' bf.yaml > bf.yaml"
+                    sh "sed 's/utn/${value2}/' be.yaml > bf.yaml"
+                    sh "sed 's/atn/${value1}/' be.yaml > bf.yaml"
                     sh "cat bf.yaml"
                     sh "rm -f bf.yaml"
                 }
