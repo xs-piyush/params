@@ -5,19 +5,23 @@ pipeline {
         stage('Function') {
             steps {
                 script {
-                    if (params.image_and_name == 'Image=nginx:latest, Deployment Name: Nginx-deployment') {
-                        sh "sed 's/utn/Nginx-deployment/' be.yaml > bf.yaml"
-                        sh "sed 's/atn/nginx:latest/' be.yaml > bf.yaml"
-                        sh "cat bf.yaml"
-                        sh "rm -f bf.yaml"
-                    } else if (params.image_and_name == 'Image=httpd, Deployment Name: Apache-deployment') {
-                        sh "sed 's/utn/Apache-deployment/' be.yaml > bf.yaml"
-                        sh "sed 's/atn/httpd:latest/' be.yaml > bf.yaml"
-                        sh "cat bf.yaml"
-                        sh "rm -f bf.yaml"                        
+                    def value1
+                    def value2
+ 
+                    if (params.image_and_name == 'nginx:latest') {
+                        value1 = 'nginx:latest'
+                        value2 = 'Nginx-deployment'
+                    } else if (params.image_and_name == 'httpd:latest') {
+                        value1 = 'httpd:latest'
+                        value2 = 'Apache-deployment'
                     }
  
                     echo "Building for distribution: ${params.image_and_name}"
+ 
+                    sh "sed 's/utn/${value2}/' bf.yaml > bf.yaml"
+                    sh "sed 's/atn/${value1}/' bf.yaml > bf.yaml"
+                    sh "cat bf.yaml"
+                    sh "rm -f bf.yaml"
                 }
             }
         }
