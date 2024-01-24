@@ -8,10 +8,10 @@ pipeline {
                     def value1
                     def value2
  
-                    if (params.image_and_name == 'nginx:latest') {
+                    if (params.image_and_name == 'Image=nginx:latest, Deployment Name: Nginx-deployment') {
                         value1 = 'nginx:latest'
                         value2 = 'Nginx-deployment'
-                    } else if (params.image_and_name == 'httpd:latest') {
+                    } else if (params.image_and_name == 'Image=httpd, Deployment Name: Apache-deployment') {
                         value1 = 'httpd:latest'
                         value2 = 'Apache-deployment'
                     }
