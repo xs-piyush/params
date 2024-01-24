@@ -5,6 +5,7 @@ pipeline {
             steps {
               sh "sed 's/url/url1/' be.yaml > bf.yaml"
               sh "cat bf.yaml"
+              sh "rm -f bf.yaml"
             }
         }
     }
