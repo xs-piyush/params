@@ -5,15 +5,15 @@ pipeline {
             steps {
                 script {
                     echo "Building for distribution: ${params.imageurl}"
-                    sh "sed 's/name: utn/name: ${params.name}/g' be.txt"
-                    sh "cat be.txt"
-                    sh "rm -f be.txt"
+                    sh "sed 's/name: utn/name: ${params.name}/g' be.txt > bf.txt"
+                    sh "cat bf.txt"
+                    sh "rm -f bf.txt"
                 }
             }
         }
         stage('Choose') {
             steps {
-                sh "echo 'hello'"
+                sh "cat bf.txt"
             }
         }
     }
