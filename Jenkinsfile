@@ -5,8 +5,8 @@ pipeline {
             steps {
                 script {
                     echo "Building for distribution: ${params.imageurl}"
-                    sh "sed 's/name: utn/name: ${params.name}/g' be.txt"
-                    sh "sed 's/image: atn/image: ${params.imageurl}/g' be.txt"
+                    sh "sed 's/name: nginx-deployment/name: ${params.name}/g' be.txt"
+                    sh "sed 's/image: nginx/image: ${params.imageurl}/g' be.txt"
                     sh "cat be.txt"
                     sh "rm -f be.txt"
                 }
