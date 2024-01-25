@@ -5,10 +5,10 @@ pipeline {
             steps {
                 script {
                     echo "Building for distribution: ${params.imageurl}"
-                    sh "sed 's/name: utn/name: ${params.name}/g' be.txt > bf.txt"
-                    sh "sed 's/image: atn/image: ${params.imageurl}/g' be.txt > bf.txt"
-                    sh "cat bf.txt"
-                    sh "rm -f bf.txt"
+                    sh "sed 's/name: utn/name: ${params.name}/g' be.txt"
+                    sh "sed 's/image: atn/image: ${params.imageurl}/g' be.txt"
+                    sh "cat be.txt"
+                    sh "rm -f be.txt"
                 }
             }
         }
