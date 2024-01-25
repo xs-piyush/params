@@ -2,22 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: utn
-  labels:
-    app: web
 spec:
   selector:
     matchLabels:
-      app: web
-  replicas: 5
-  strategy:
-    type: RollingUpdate
+      app: nginx
+  replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: web
+        app: nginx
     spec:
       containers:
-       —name: frontend
-          image: atu
-          ports:
-           —containerPort: 80
+      - name: nginx
+        image: atu
+        ports:
+        - containerPort: 80
